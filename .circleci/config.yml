@@ -17,11 +17,9 @@ jobs:
       - store_artifacts:
         path: /home/project/*
         destination: sample-artifact
-        
+
 workflows:
-    build-and-test:
+    build-and-publish:
       jobs:
         - build-and-test
-    Push-Artifacts:
-      jobs:
         - publish-artifacts
