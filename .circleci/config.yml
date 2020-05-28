@@ -12,14 +12,16 @@ jobs:
             - run: npm install
             - run: pwd && ls
   Push-Artifacts:
+    executor:
+      name: node/default
     steps:
       - run: ls && find .
       - store_artifacts:
-        path: /home/project/*
-        destination: sample-artifact
+           path: /home/project/*
+           destination: sample-artifact
 
 workflows:
     build-and-publish:
       jobs:
         - build-and-test
-        - publish-artifacts
+        - Push-Artifacts
