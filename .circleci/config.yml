@@ -10,5 +10,8 @@ jobs:
       - node/with-cache:
           steps:
             - run: npm install
-            - run: echo "hello world"
-            - run: pwd && ls
+            - run: npm test
+workflows:
+    build-and-test:
+      jobs:
+        - build-and-test
