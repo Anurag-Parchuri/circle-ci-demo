@@ -12,15 +12,12 @@ jobs:
             - run: npm install
             - run: pwd && ls
   Push-Artifacts:
-    executor:
-      name: centos/default
     steps:
-      - checkout
-      steps:
-        - run: ls
-        - store_artifacts:
-          path: /home/project/*
-          destination: sample-artifact
+      - run: ls && find .
+      - store_artifacts:
+        path: /home/project/*
+        destination: sample-artifact
+        
 workflows:
     build-and-test:
       jobs:
