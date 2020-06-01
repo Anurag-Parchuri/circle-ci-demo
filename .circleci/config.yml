@@ -21,7 +21,6 @@ jobs:
            destination: sample-artifact
       - run: pwd && ls
       - run: find .
-      - run: exit 1
 
 workflows:
     build-and-publish:
