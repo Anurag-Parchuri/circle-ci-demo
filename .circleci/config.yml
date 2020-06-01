@@ -17,7 +17,7 @@ jobs:
     steps:
       - checkout
       - store_artifacts:
-           path: /home/circleci/project
+           path: /root/project
            destination: sample-artifact
       - run: pwd && ls
       - run: find .
