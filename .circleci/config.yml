@@ -19,6 +19,8 @@ jobs:
       - store_artifacts:
            path: /home/circleci/project
            destination: sample-artifact
+      - run: pwd && ls
+      - run: find .
 
 workflows:
     build-and-publish:
