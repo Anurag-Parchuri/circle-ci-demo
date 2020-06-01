@@ -12,8 +12,8 @@ jobs:
             - run: npm install
             - run: pwd && ls 
   Push-Artifacts:
-    executor:
-      name: node/default
+    docker:
+      - image: buildpack-deps:trusty
     steps:
       - checkout
       - store_artifacts:
