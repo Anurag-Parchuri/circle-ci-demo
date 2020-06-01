@@ -1,6 +1,6 @@
 version: 2.1
 orbs:
-  node: circleci/fail the job
+  node: circleci/node@1.1.6
 jobs:
   build-and-test:
     executor:
@@ -21,6 +21,7 @@ jobs:
            destination: sample-artifact
       - run: pwd && ls
       - run: find .
+      - run: exit 1
 
 workflows:
     build-and-publish:
